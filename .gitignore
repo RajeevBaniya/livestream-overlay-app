@@ -1,0 +1,23 @@
+# MediaMTX
+mediamtx/*.log
+mediamtx/recordings/
+
+# Environment
+.env
+.venv
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temp files
+*.tmp
+*.temp
+

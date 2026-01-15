@@ -1,0 +1,46 @@
+# MediaMTX Configuration
+
+# Log settings
+logLevel: info
+logDestinations: [stdout]
+
+# RTSP Server (receives RTSP streams)
+rtspAddress: :8554
+
+# HLS Server (serves streams to browser)
+hlsAddress: :8888
+hlsAlwaysRemux: yes
+hlsVariant: lowLatency
+hlsSegmentCount: 7
+hlsSegmentDuration: 1s
+hlsPartDuration: 200ms
+hlsSegmentMaxSize: 50M
+
+# WebRTC (optional, for lower latency)
+webrtcAddress: :8889
+
+# Allow all origins (CORS)
+hlsAllowOrigin: "*"
+
+# Path settings - define how streams are accessed
+paths:
+  # Default path - can accept any RTSP stream
+  all_others:
+    # Source can be:
+    # - RTSP URL: rtsp://example.com/stream
+    # - Camera: rtsp://username:password@camera-ip:554/stream
+    # leave empty - provide streams dynamically
+    
+  # Example: stream from RTSP.me
+  livestream:
+    # Users can publish RTSP to: rtsp://localhost:8554/livestream
+    # Or we can pull from: source: rtsp://rtsp.me/your-stream
+    
+  # Test stream - use a working test pattern
+  test:
+    source: rtsp://807e9439d5ca.entrypoint.cloud.wowza.com:1935/app-rC94792j/068b9c9a_stream2
+    sourceOnDemand: yes
+    sourceOnDemandStartTimeout: 10s
+    sourceOnDemandCloseAfter: 10s
+
+

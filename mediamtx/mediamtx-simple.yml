@@ -1,0 +1,24 @@
+# Simple MediaMTX Configuration
+
+# Log settings
+logLevel: info
+logDestinations: [stdout]
+
+# RTSP Server
+rtspAddress: :8554
+
+# HLS Server
+hlsAddress: :8888
+hlsAllowOrigin: "*"
+
+# Disable other services that might conflict
+apiAddress: ""
+metricsAddress: ""
+pprofAddress: ""
+
+# Simple test path
+paths:
+  test:
+    # Generate test pattern
+    source: publisher
+    sourceOnDemand: no
